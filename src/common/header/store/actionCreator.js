@@ -11,3 +11,9 @@ export const searchBlur = () => {
       type: actionTypes.SEARCH_BLUR
     }
   }
+
+export const getList = () => {
+  return (dispatch) => {
+    console.log(124)
+  }
+}

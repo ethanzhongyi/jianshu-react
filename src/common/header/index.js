@@ -10,7 +10,7 @@ import {
   Button,
   SearchWrapper} from './style';
 import { CSSTransition } from 'react-transition-group';
-import { actionCreator }  from './store';
+import { actionCreators }  from './store';
 
 //没有业务逻辑可以写成 无状态组件，性能更好
 const Header = (props) => {
@@ -59,10 +59,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     handleInputFocus() {
-      dispatch(actionCreator.searchFocus());
+      dispatch(actionCreators.searchFocus());
     },
     handleInputBlur() {
-      dispatch(actionCreator.searchBlur());
+      dispatch(actionCreators.searchBlur());
     }
   } 
 }

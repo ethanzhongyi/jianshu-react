@@ -5,4 +5,4 @@ const reducer =combineReducers({
   header: headerRreducer
 });
 
-export default reducer;
+export default reducer; 

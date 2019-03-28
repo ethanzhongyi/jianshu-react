@@ -21,7 +21,8 @@ import { actionCreators }  from './store';
 //没有业务逻辑可以写成 无状态组件(函数)，性能更好
 class Header extends Component {
   getListArea() {
-    if (this.props.focused) {
+    const {focused, list} = this.props
+    if (focused) {
       return (
         <SearchInfo>
           <SearchInfoTitle>
@@ -30,7 +31,7 @@ class Header extends Component {
           </SearchInfoTitle>
           <SearchInfoList>
             {
-              this.props.list.map((item) => {
+              list.map((item) => {
                 return <SearchInfoItem>{item}</SearchInfoItem>
               })
             } 
@@ -43,6 +44,7 @@ class Header extends Component {
   }
 
   render() {
+    const {focused, handleInputFocus, handleInputBlur} = this.props
     return (
       <HeaderWrapper>
         <Logo />
@@ -55,23 +57,23 @@ class Header extends Component {
           </NavItem>
           <SearchWrapper>
             <CSSTransition
-              in={this.props.focused}
+              in={focused}
               timeout={200}
               classNames='slide'
             >
               <NavSearch 
-                className={this.props.focused ? 'focused' : ''}
-                onFocus={this.props.handleInputFocus}
-                onBlur={this.props.handleInputBlur}
+                className={focused ? 'focused' : ''}
+                onFocus={handleInputFocus}
+                onBlur={handleInputBlur}
                 ></NavSearch>
             </CSSTransition>
-            <i className={this.props.focused ? 'focused iconfont' : 'iconfont'}>&#xe609;</i>
+            <i className={focused ? 'focused iconfont' : 'iconfont'}>&#xe609;</i>
             {this.getListArea()}
           </SearchWrapper>
         </Nav>
         <Addition>
           <Button className='writting'>
-            <i className={this.props.focused ? 'focused iconfont' : 'iconfont'}>&#xe6af;</i>
+            <i className={focused ? 'focused iconfont' : 'iconfont'}>&#xe6af;</i>
             写文章
           </Button>
           <Button className='reg'>注册</Button>

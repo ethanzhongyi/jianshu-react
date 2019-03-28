@@ -14,10 +14,30 @@ export const searchBlur = () => {
     }
   }
 
+export const mouseIn = () => {
+  return {
+    type: actionTypes.MOUSE_IN
+  }
+}
+
+export const mouseOut = () => {
+  return {
+    type: actionTypes.MOUSE_OUT
+  }
+}
+
+export const changPage = (page) => {
+  return {
+    type: actionTypes.CHANGE_PAGE,
+    page
+  }
+}
+
 const changeList = (data) => {
   return {
     type: actionTypes.CHANGE_LIST,
-    data: fromJS(data)
+    data: fromJS(data),
+    totalPage: Math.ceil(data.length / 10)
   }
 }
 export const getList = () => {

@@ -20,8 +20,8 @@ import { actionCreators }  from './store';
 
 //没有业务逻辑可以写成 无状态组件(函数)，性能更好
 class Header extends Component {
-  getListArea(show) {
-    if (show) {
+  getListArea() {
+    if (this.props.focused) {
       return (
         <SearchInfo>
           <SearchInfoTitle>
@@ -29,13 +29,11 @@ class Header extends Component {
             <SearchInfoSwitch>换一批</SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
+            {
+              this.props.list.map((item) => {
+                return <SearchInfoItem>{item}</SearchInfoItem>
+              })
+            } 
           </SearchInfoList>
         </SearchInfo>  
       )
@@ -68,7 +66,7 @@ class Header extends Component {
                 ></NavSearch>
             </CSSTransition>
             <i className={this.props.focused ? 'focused iconfont' : 'iconfont'}>&#xe609;</i>
-            {this.getListArea(this.props.focused)}
+            {this.getListArea()}
           </SearchWrapper>
         </Nav>
         <Addition>
@@ -85,7 +83,8 @@ class Header extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    focused: state.header.focused
+    focused: state.getIn(['header','focused']),
+    list: state.getIn(['header','list'])
   }
 }
 

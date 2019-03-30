@@ -49,6 +49,37 @@ const defaultState = fromJS({
 }, {
   "id": 6,
   "imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png"
+}],
+'writerList': [{
+  'id': 1,
+  'title': '徐林Grace',
+  'desc': '写了713.9k字 · 5.8k喜欢',
+  'imgUrl': '//upload.jianshu.io/users/upload_avatars/5545154/1a3d5ed6-9ad1-44b3-9457-3e6a29dd1b71.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp'
+}, {
+  'id': 2,
+  'title': '无限猴子',
+  'desc': '写了713.9k字 · 5.8k喜欢',
+  'imgUrl': '//upload.jianshu.io/users/upload_avatars/13213889/7314c5cc-ca7f-4542-b914-2c8dffaf324d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp'
+}, {
+  'id': 3,
+  'title': '简书大学堂',
+  'desc': '写了713.9k字 · 5.8k喜欢',
+  'imgUrl': '//upload.jianshu.io/users/upload_avatars/3627484/eb973bb9-37ba-4d07-acec-850c0a66d1bb.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp'
+}, {
+  'id': 4,
+  'title': '打碎',
+  'desc': '写了713.9k字 · 5.8k喜欢',
+  'imgUrl': '//upload.jianshu.io/users/upload_avatars/5205317/1179d71b-e7c6-4023-89e8-bba25f88272b.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp'
+}, {
+  'id': 5,
+  'title': '小学堂',
+  'desc': '写了713.9k字 · 5.8k喜欢',
+  'imgUrl': '//upload.jianshu.io/users/upload_avatars/4802366/4f86b75d-b61b-4126-8be4-87a151c9cd28.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp'
+}, {
+  'id': 6,
+  'title': '你好学堂',
+  'desc': '写了713.9k字 · 5.8k喜欢',
+  'imgUrl': '//upload.jianshu.io/users/upload_avatars/3627484/eb973bb9-37ba-4d07-acec-850c0a66d1bb.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp'
 }]
 });
 

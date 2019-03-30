@@ -79,14 +79,43 @@ export const ListInfo =	styled.div`
 	}
 `;
 
-export const RecommendWrapper =styled.div`
+export const RecommendWrapper = styled.div`
   margin: 30px 0;
   width: 280px;
 `;
 
-export const RecommendItem =styled.div`
+export const RecommendItem = styled.div`
   height: 50px;
   width: 280px;
   background: url(${(props) => props.imgUrl});
   background-size: contain;
+`;
+
+export const  WriterItem = styled.div`
+  overflow: hidden;
+  padding: 5px 0;
+  .pic {
+	display: block;
+	width: 48px;
+	height: 48px;
+	float: left;
+	margin-top: 10px;
+	border-radius: 24px;
+}
+`;
+
+export const WriterInfo = styled.div`
+    width: 220px;
+	float: right;
+	.title {
+		line-height: 10px;
+		font-size: 14px;
+		font-weight: bold;
+		color: #333;
+	}
+	.desc {
+		line-height: 14px;
+		font-size: 13px;
+		color: #999;
+	}
 `;

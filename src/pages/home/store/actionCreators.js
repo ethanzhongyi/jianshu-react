@@ -35,3 +35,10 @@ export const getMore = (page) => {
   })
   }
 }
+
+export const toggleTopShow = (showFlag) => {
+  return {
+    type: actionsType.SHOW_FLAG,
+    showFlag
+  }
+}

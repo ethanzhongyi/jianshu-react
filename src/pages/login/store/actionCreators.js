@@ -6,6 +6,11 @@ const changeLogin =() => ({
   value: true
 })
 
+export const logout = () => ({
+  type: actionTypes.CHANGE_LOGOUT,
+  value: false
+})
+
 export const login = (account, passwd) => {
   return (dispatch) => {
     axios.get('/api/login.json?account=' + account + '&passwd=' + passwd)
@@ -19,3 +24,4 @@ export const login = (account, passwd) => {
         })
   }
 }
+

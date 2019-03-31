@@ -18,6 +18,7 @@ import {
 } from './style';
 import { CSSTransition } from 'react-transition-group';
 import { actionCreators }  from './store';
+import { actionCreators as loginActionCreators }  from '../../pages/login/store';
 
 //没有业务逻辑可以写成 无状态组件(函数)，性能更好
 class Header extends Component {
@@ -58,7 +59,7 @@ class Header extends Component {
   }
 
   render() {
-    const {focused, handleInputFocus, handleInputBlur, list, login} = this.props
+    const {focused, handleInputFocus, handleInputBlur, list, login, logout} = this.props
     return (
       <HeaderWrapper>
         <Logo />
@@ -66,7 +67,7 @@ class Header extends Component {
           <NavItem className='left active'>首页</NavItem>
           <NavItem className='left'>下载App</NavItem>
           { login 
-            ? <NavItem className='right'>退出</NavItem>
+            ? <NavItem onClick={logout} className='right'>退出</NavItem>
             : <Link to='/login'><NavItem className='right'>登录</NavItem></Link>}
           <NavItem className='right'>
             <i className='iconfont'>&#xe636;</i>
@@ -140,6 +141,9 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(actionCreators.changPage(1));
       }
       
+    },
+    logout() {
+      dispatch(loginActionCreators.logout());
     }
   } 
 }

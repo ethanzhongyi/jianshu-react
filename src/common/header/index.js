@@ -89,11 +89,13 @@ class Header extends Component {
           </SearchWrapper>
         </Nav>
         <Addition>
-          <Button className='writting'>
-            <i className={focused ? 'focused iconfont' : 'iconfont'}>&#xe6af;</i>
-            写文章
-          </Button>
-          <Button className='reg'>注册</Button>
+          <Link to='/write'>
+            <Button className='writting'>
+              <i className={focused ? 'focused iconfont' : 'iconfont'}>&#xe6af;</i>
+              写文章
+            </Button>
+            <Button className='reg'>注册</Button>
+          </Link>
         </Addition>
       </HeaderWrapper>
     )
